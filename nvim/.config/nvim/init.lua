@@ -21,7 +21,22 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {}
+local plugins = {
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+}
+
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+require("catppuccin").setup({
+  flavour = "mocha",
+  color_overrides = {
+    mocha = {
+      base = "#0b0b11",
+      mantle = "#0b0b11",
+      crust = "#0b0b11"
+    } 
+  }
+})
+vim.cmd.colorscheme "catppuccin"
