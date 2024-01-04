@@ -9,3 +9,6 @@ opt.shiftwidth = 2
 
 opt.autoindent = true
 opt.smartindent = true
+
+opt.number = true
+opt.relativenumber = true
